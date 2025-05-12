@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asqaraliyev Faxriddin</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+      color: #333;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    header h1 span {
+      color: #1abc9c;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #ecf0f1;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #1abc9c;
+    }
+
+    .main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 20px;
+      background: rgba(255, 255, 255, 0.9);
+      flex-wrap: wrap;
+      border-radius: 10px;
+      margin: 20px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .text {
+      max-width: 500px;
+      padding: 20px;
+    }
+
+    .text h2 {
+      font-size: 30px;
+    }
+
+    .text span {
+      color: #1abc9c;
+    }
+
+    .buttons button {
+      margin: 10px 10px 0 0;
+      padding: 12px 25px;
+      background-color: #1abc9c;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 30px;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .buttons button:hover {
+      background-color: #16a085;
+    }
+
+    .image-section {
+      text-align: center;
+      margin: 20px;
+    }
+
+    .image-section img {
+      width: 320px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .image-section img:hover {
+      transform: scale(1.05);
+    }
+
+    .contact-info {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: white;
+      color: #2c3e50;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      z-index: 1000;
+      width: 260px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .contact-info p {
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Asqaraliyev <span>Faxriddin</span></h1>
+    <nav>
+     
+      
+    </nav>
+  </header>
+
+  <section class="main">
+    <div class="text">
+      <h2>Assalomu alaykum,<br> Men <span>Faxriddin</span></h2>
+      <p>Men Backend dasturchisiman. HTML, CSS, Mysql, Node.js, JavaScript tillarini bilaman.</p>
+      <div class="buttons">
+        <a href="https://t.me/Asqaraliyev_Faxriddin" target="_blank">
+          <button>Xabarlashish</button>
+        </a>
+        <button id="contactBtn2">Bogʻlanish</button>
+      </div>
+      
+    </div>
+  </section>
+
+  <section class="image-section">
+    <img src="img.jpg" alt="Portfolio rasmi" id="changingImage">
+  </section>
+
+  
+
+
+
+
+  <div id="contactInfo" class="contact-info">
+    <p>📧 Email: faxriddin@gmail.com</p>
+    <p>📞 Tel: +998903641207</p>
+    <p>📱 Telegram: @Asqaraliyev_Faxriddin</p>
+  </div>
+
+
+
+  
+  <script>
+    const contactBtn = document.getElementById("contactBtn");
+    const contactBtn2 = document.getElementById("contactBtn2");
+    const contactInfo = document.getElementById("contactInfo");
+
+    let isVisible = false;
+
+    function toggleContact() {
+      isVisible = !isVisible;
+      contactInfo.style.display = isVisible ? "block" : "none";
+    }
+
+    contactBtn.addEventListener("click", toggleContact);
+    contactBtn2.addEventListener("click", toggleContact);
+
+    // Rasm almashtirish
+    const images = ["img.jpg", "img2.jpg", "img3.jpg"];
+    let index = 0;
+    const imageElement = document.getElementById("changingImage");
+
+    setInterval(() => {
+      index = (index + 1) % images.length;
+      imageElement.src = images[index];
+    }, 3000);
+  </script>
+</body>
+</html>
